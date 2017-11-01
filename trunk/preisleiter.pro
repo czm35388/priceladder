@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-10-08T17:43:13
+# Project created by QtCreator 2017-10-31T09:28:56
 #
 #-------------------------------------------------
 
@@ -8,13 +8,13 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = preisleiter
+TARGET = testTime
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        preisleiter.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += preisleiter.h
 
-FORMS    += mainwindow.ui
+FORMS    += preisleiter.ui
