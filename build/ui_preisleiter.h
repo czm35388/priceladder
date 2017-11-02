@@ -35,7 +35,8 @@ public:
     {
         if (Preisleiter->objectName().isEmpty())
             Preisleiter->setObjectName(QStringLiteral("Preisleiter"));
-        Preisleiter->resize(400, 300);
+        Preisleiter->resize(1280, 800);
+        Preisleiter->setStyleSheet(QStringLiteral(""));
         centralWidget = new QWidget(Preisleiter);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pB_Start = new QPushButton(centralWidget);

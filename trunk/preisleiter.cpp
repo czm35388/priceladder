@@ -6,6 +6,12 @@ Preisleiter::Preisleiter(QWidget *parent) :
     ui(new Ui::Preisleiter)
 {
     ui->setupUi(this);
+    //background-image:url(/Users/Michael/Documents/Programmierung/Git_Repos/priceladder/src/Factory_Preisleiter_Präsentation.jpg)"
+    QPixmap bkgnd("/Users/Michael/Documents/Programmierung/Git_Repos/priceladder/src/Factory_Preisleiter_Präsentation.png");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
 
     ui->pB_Start->setGeometry(150, 150, 100, 25);
     ui->pB_Start->setText("Start");
