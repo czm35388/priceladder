@@ -14,26 +14,26 @@ Preisleiter::Preisleiter(QWidget *parent) :
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
 
-    ui->pB_Start->setGeometry(600, 170, 100, 25);
+    ui->pB_Start->setGeometry(600, 167, 100, 25);
     ui->pB_Start->setText("Start");
 
     ui->lb_Timer_1->setText(time_1.toString("hh:mm:ss"));
-    ui->lb_Timer_1->setGeometry(723, 230, 300, 50);
+    ui->lb_Timer_1->setGeometry(945, 312, 300, 50);
 
     ui->lb_Timer_2->setText(time_2.toString("hh:mm:ss"));
-    ui->lb_Timer_2->setGeometry(723, 348, 300, 50);
+    ui->lb_Timer_2->setGeometry(945, 465, 300, 50);
 
     ui->lb_Timer_3->setText(time_3.toString("hh:mm:ss"));
-    ui->lb_Timer_3->setGeometry(723, 463, 300, 50);
+    ui->lb_Timer_3->setGeometry(945, 615, 300, 50);
 
     ui->lb_Timer_4->setText(time_4.toString("hh:mm:ss"));
-    ui->lb_Timer_4->setGeometry(723, 580, 300, 50);
+    ui->lb_Timer_4->setGeometry(945, 770, 300, 50);
 
     ui->lb_Timer_5->setText(time_5.toString("hh:mm:ss"));
-    ui->lb_Timer_5->setGeometry(723, 698, 300, 50);
+    ui->lb_Timer_5->setGeometry(945, 925, 300, 50);
 
 
-    myTimer->setInterval(1);
+    myTimer->setInterval(1000);
 
 
     connect(myTimer, SIGNAL(timeout()), this, SLOT(myTimer_TimeOut()));

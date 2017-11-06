@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>800</height>
+    <width>1680</width>
+    <height>1050</height>
    </rect>
   </property>
   <property name="font">
@@ -55,7 +55,7 @@
     <property name="font">
      <font>
       <family>Arial Narrow</family>
-      <pointsize>46</pointsize>
+      <pointsize>60</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <stylestrategy>PreferDefault</stylestrategy>
@@ -81,7 +81,7 @@
     <property name="font">
      <font>
       <family>Arial Narrow</family>
-      <pointsize>46</pointsize>
+      <pointsize>60</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <stylestrategy>PreferDefault</stylestrategy>
@@ -107,7 +107,7 @@
     <property name="font">
      <font>
       <family>Arial Narrow</family>
-      <pointsize>46</pointsize>
+      <pointsize>60</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <stylestrategy>PreferDefault</stylestrategy>
@@ -133,7 +133,7 @@
     <property name="font">
      <font>
       <family>Arial Narrow</family>
-      <pointsize>46</pointsize>
+      <pointsize>60</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <stylestrategy>PreferDefault</stylestrategy>
@@ -159,7 +159,7 @@
     <property name="font">
      <font>
       <family>Arial Narrow</family>
-      <pointsize>46</pointsize>
+      <pointsize>60</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <stylestrategy>PreferDefault</stylestrategy>

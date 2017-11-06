@@ -36,7 +36,7 @@ public:
     {
         if (Preisleiter->objectName().isEmpty())
             Preisleiter->setObjectName(QStringLiteral("Preisleiter"));
-        Preisleiter->resize(1280, 800);
+        Preisleiter->resize(1680, 1050);
         QFont font;
         font.setPointSize(40);
         font.setBold(true);
@@ -57,7 +57,7 @@ public:
         lb_Timer_1->setGeometry(QRect(530, 65, 201, 51));
         QFont font2;
         font2.setFamily(QStringLiteral("Arial Narrow"));
-        font2.setPointSize(46);
+        font2.setPointSize(60);
         font2.setBold(true);
         font2.setWeight(75);
         font2.setKerning(true);
