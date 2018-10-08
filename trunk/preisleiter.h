@@ -17,7 +17,7 @@ class Preisleiter : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Preisleiter(QWidget *parent = 0);
+    explicit Preisleiter(QWidget *parent = nullptr);
     ~Preisleiter();
 
     int iSecs = 0;
@@ -44,11 +44,11 @@ private:
 
     QTimer* myTimer = new QTimer();
 
-    QTime time_1 = QTime::QTime(0, 30, 0, 0);
-    QTime time_2 = QTime::QTime(1,  0, 0, 0);
-    QTime time_3 = QTime::QTime(0, 30, 0, 0);
-    QTime time_4 = QTime::QTime(1,  0, 0, 0);
-    QTime time_5 = QTime::QTime(3,  0, 0, 0);
+    QTime time_1 = QTime(0, 0, 0, 0);
+    QTime time_2 = QTime(0, 0, 0, 0);
+    QTime time_3 = QTime(0, 0, 0, 0);
+    QTime time_4 = QTime(0, 0, 0, 0);
+    QTime time_5 = QTime(0, 0, 0, 0);
 
     QString null = "00:00:00";
     QString fünf = "00:05:00";
