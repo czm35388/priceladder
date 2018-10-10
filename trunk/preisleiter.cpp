@@ -8,13 +8,13 @@ Preisleiter::Preisleiter(QWidget *parent) :
     ui->setupUi(this);
     ui->centralWidget->setWindowTitle("Preisleiter");
 
-    QPixmap bkgnd("/Users/Michael/Documents/Programmierung/Git_Repos/priceladder/src/Factory_Preisleiter_Präsentation.jpg");
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    QPixmap bkgnd("/Users/michael/Documents/Programmierung/02_Git_Repos/priceladder/files/Factory_Preisleiter_Präsentation.jpg");
+    bkgnd = bkgnd.scaled(iScreenWidth, iScreenHigh, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
 
-    ui->pB_Start->setGeometry(600, 167, 100, 25);
+    ui->pB_Start->setGeometry(iScreenWidth/2, 167, 100, 25);
     ui->pB_Start->setText("Start");
 
     ui->lb_Timer_1->setText(time_1.toString("hh:mm:ss"));

@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>Preisleiter</class>
  <widget class="QMainWindow" name="Preisleiter">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1680</width>
-    <height>1050</height>
+    <width>1980</width>
+    <height>1020</height>
    </rect>
   </property>
   <property name="font">
