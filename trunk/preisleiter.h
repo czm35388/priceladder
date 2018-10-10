@@ -46,11 +46,11 @@ private:
 
     QTimer* myTimer = new QTimer();
 
-    QTime time_1 = QTime(0, 0, 0, 0);
-    QTime time_2 = QTime(0, 0, 0, 0);
-    QTime time_3 = QTime(0, 0, 0, 0);
-    QTime time_4 = QTime(0, 0, 0, 0);
-    QTime time_5 = QTime(0, 0, 0, 0);
+    QTime time_1 = QTime(0, 0, 5, 0);
+    QTime time_2 = QTime(0, 0, 5, 0);
+    QTime time_3 = QTime(0, 0, 5, 0);
+    QTime time_4 = QTime(0, 0, 5, 0);
+    QTime time_5 = QTime(0, 0, 5, 0);
 
     QString null = "00:00:00";
     QString fünf = "00:05:00";

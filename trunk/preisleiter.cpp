@@ -8,8 +8,6 @@ Preisleiter::Preisleiter(QWidget *parent) :
     ui->setupUi(this);
     ui->centralWidget->setWindowTitle("Preisleiter");
 
-
-
     QPixmap bkgnd("/Users/michael/Documents/Programmierung/02_Git_Repos/priceladder/files/Factory_Preisleiter_Präsentation.jpg");
     bkgnd = bkgnd.scaled(iScreenwidth, iScreenheigth, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;

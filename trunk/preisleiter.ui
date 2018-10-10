@@ -177,6 +177,80 @@
     </property>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1980</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionStart_Countdown"/>
+    <addaction name="actionStop_Countdown"/>
+    <addaction name="actionAbort_Countdown"/>
+    <addaction name="actionReset_Time"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionTimers"/>
+    <addaction name="actionBackground"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuSettings"/>
+  </widget>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close Application</string>
+   </property>
+  </action>
+  <action name="actionTimers">
+   <property name="text">
+    <string>Set Timers</string>
+   </property>
+  </action>
+  <action name="actionBackground">
+   <property name="text">
+    <string>Set Background</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Background</string>
+   </property>
+  </action>
+  <action name="actionStart_Countdown">
+   <property name="text">
+    <string>Start Time</string>
+   </property>
+  </action>
+  <action name="actionStop_Countdown">
+   <property name="text">
+    <string>Stop Time</string>
+   </property>
+   <property name="toolTip">
+    <string>Stop Time</string>
+   </property>
+  </action>
+  <action name="actionAbort_Countdown">
+   <property name="text">
+    <string>Abort Time</string>
+   </property>
+   <property name="toolTip">
+    <string> Abort Time</string>
+   </property>
+  </action>
+  <action name="actionReset_Time">
+   <property name="text">
+    <string>Reset Time</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
