@@ -2,6 +2,8 @@
 #define PREISLEITER_H
 
 #include <QMainWindow>
+#include <QApplication>
+#include <QDesktopWidget>
 #include <QTime>
 #include <QTimer>
 #include <QLabel>
@@ -58,6 +60,10 @@ private:
     void Countdown_3();
     void Countdown_4();
     void Countdown_5();
+
+    QRect oScreensize = QApplication::desktop()->screenGeometry();
+    int iScreenheigth = oScreensize.height();
+    int iScreenwidth  = oScreensize.width();
 };
 
 #endif // PREISLEITER_H
