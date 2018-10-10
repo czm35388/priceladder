@@ -8,12 +8,15 @@ Preisleiter::Preisleiter(QWidget *parent) :
     ui->setupUi(this);
     ui->centralWidget->setWindowTitle("Preisleiter");
 
+    //@todo set the path via the gui-settings "background"
     QPixmap bkgnd("/Users/michael/Documents/Programmierung/02_Git_Repos/priceladder/files/Factory_Preisleiter_Präsentation.jpg");
     bkgnd = bkgnd.scaled(iScreenwidth, iScreenheigth, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
 
+    //@todo set the geometry dependend on the size of the Screen and fitted to the background
+    //maybe its possible to set the geometry via "Drag and Drop" within the Application
     ui->pB_Start->setGeometry(iScreenwidth/2, 167, 100, 25);
     ui->pB_Start->setText("Start");
 
