@@ -3,15 +3,17 @@
 
 
 // CTOR
-Preisleiter::Preisleiter(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::Preisleiter)
+Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
+                                            ui(new Ui::Preisleiter)
 {
     ui->setupUi(this);
     ui->centralWidget->setWindowTitle("Preisleiter");
 
     //@todo set the path via the gui-settings "background"
-    QPixmap bkgnd("c:\\Users\\mc\\work\\05_Git\\Preisleiter\\Factory_Preisleiter_Präsentation.jpg");
+    QString path = QDir::currentPath();
+    path.append("/FactoryPreisleiter.jpg");
+
+    QPixmap bkgnd(path);
     bkgnd = bkgnd.scaled(iScreenwidth, iScreenheigth, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);

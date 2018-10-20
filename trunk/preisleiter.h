@@ -1,13 +1,14 @@
-#pragma once;
+#pragma once
 
 #include <QMainWindow>
 #include <QApplication>
 #include <QMessageBox>
+#include <QPixmap>
+#include <QDir>
 #include <QDesktopWidget>
 #include <QTime>
 #include <QTimer>
 #include <QLabel>
-#include <QLCDNumber>
 #include <QFont>
 
 namespace Ui
@@ -35,9 +36,6 @@ public:
     bool bCountdown_3 = false;
     bool bCountdown_4 = false;
     bool bCountdown_5 = false;
-
-   public:
-
 
 private slots:
     void on_startTimer_triggered();
@@ -68,6 +66,7 @@ private:
     void Countdown_3();
     void Countdown_4();
     void Countdown_5();
+
 
     QRect oScreensize = QApplication::desktop()->screenGeometry();
     int iScreenheigth = oScreensize.height();
