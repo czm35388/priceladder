@@ -10,8 +10,9 @@
 #include <QLCDNumber>
 #include <QFont>
 
-namespace Ui {
-class Preisleiter;
+namespace Ui
+{
+    class Preisleiter;
 }
 
 class Preisleiter : public QMainWindow
@@ -35,8 +36,16 @@ public:
     bool bCountdown_4 = false;
     bool bCountdown_5 = false;
 
+   public:
+
+
 private slots:
     void on_pB_Start_released();
+    void on_actionStart_Countdown_triggered();
+    void on_actionStop_Countdown_triggered();
+    void on_actionAbort_Countdown_triggered();
+    void on_actionReset_Time_triggered();
+    void on_actionClose_triggered();
 
 public slots:
     void myTimer_TimeOut();

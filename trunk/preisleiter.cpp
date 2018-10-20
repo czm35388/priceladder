@@ -9,7 +9,7 @@ Preisleiter::Preisleiter(QWidget *parent) :
     ui->centralWidget->setWindowTitle("Preisleiter");
 
     //@todo set the path via the gui-settings "background"
-    QPixmap bkgnd("/Users/michael/Documents/Programmierung/02_Git_Repos/priceladder/files/Factory_Preisleiter_Präsentation.jpg");
+    QPixmap bkgnd("c:\\Users\\mc\\work\\05_Git\\Preisleiter\\Factory_Preisleiter_Präsentation.jpg");
     bkgnd = bkgnd.scaled(iScreenwidth, iScreenheigth, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
@@ -40,6 +40,12 @@ Preisleiter::Preisleiter(QWidget *parent) :
 
 
     connect(myTimer, SIGNAL(timeout()), this, SLOT(myTimer_TimeOut()));
+
+    connect(ui->menuMenu, SIGNAL(actionStart_Countdown.triggered()), this, SLOT(StartCountdown()));
+    connect(ui->menuMenu, SIGNAL(actionStop_Countdown.triggered()), this, SLOT(StopCountdown()));
+    connect(ui->menuMenu, SIGNAL(actionAbort_Countdown.triggered()), this, SLOT(AbortCountdown()));
+    connect(ui->menuMenu, SIGNAL(actionReset_Countdown.triggered()), this, SLOT(ResetTime()));
+    connect(ui->menuMenu, SIGNAL(actionClose.triggered()), this, SLOT(CloseApp()));
 }
 
 Preisleiter::~Preisleiter()
@@ -83,6 +89,8 @@ void Preisleiter::on_pB_Start_released()
     myTimer->start();
     ui->pB_Start->hide();
 }
+
+
 
 void Preisleiter::Countdown_1()
 {
@@ -170,4 +178,35 @@ void Preisleiter::Countdown_5()
     {
         bCountdown_5 = true;
     }
+}
+
+
+
+void Preisleiter::on_actionStart_Countdown_triggered()
+{
+    myTimer->start();
+    ui->pB_Start->hide();
+}
+
+
+
+void Preisleiter::on_actionStop_Countdown_triggered()
+{
+    myTimer->stop();
+}
+
+void Preisleiter::on_actionAbort_Countdown_triggered()
+{
+    myTimer->stop();
+}
+
+void Preisleiter::on_actionReset_Time_triggered()
+{
+
+}
+
+void Preisleiter::on_actionClose_triggered()
+{
+    ui->centralWidget->close();
+    ui->centralWidget->close();
 }
