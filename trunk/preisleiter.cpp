@@ -1,6 +1,8 @@
 #include "preisleiter.h"
 #include "ui_preisleiter.h"
 
+
+// CTOR
 Preisleiter::Preisleiter(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Preisleiter)
@@ -14,11 +16,6 @@ Preisleiter::Preisleiter(QWidget *parent) :
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
-
-    //@todo set the geometry dependend on the size of the Screen and fitted to the background
-    //maybe its possible to set the geometry via "Drag and Drop" within the Application
-    ui->pB_Start->setGeometry(iScreenwidth/2, 167, 100, 25);
-    ui->pB_Start->setText("Start");
 
     ui->lb_Timer_1->setText(time_1.toString("hh:mm:ss"));
     ui->lb_Timer_1->setGeometry(945, 312, 300, 50);
@@ -37,44 +34,50 @@ Preisleiter::Preisleiter(QWidget *parent) :
 
 
     myTimer->setInterval(1000);
-
-
     connect(myTimer, SIGNAL(timeout()), this, SLOT(myTimer_TimeOut()));
-
-    connect(ui->menuMenu, SIGNAL(actionStart_Countdown.triggered()), this, SLOT(StartCountdown()));
-    connect(ui->menuMenu, SIGNAL(actionStop_Countdown.triggered()), this, SLOT(StopCountdown()));
-    connect(ui->menuMenu, SIGNAL(actionAbort_Countdown.triggered()), this, SLOT(AbortCountdown()));
-    connect(ui->menuMenu, SIGNAL(actionReset_Countdown.triggered()), this, SLOT(ResetTime()));
-    connect(ui->menuMenu, SIGNAL(actionClose.triggered()), this, SLOT(CloseApp()));
 }
 
+// DTOR
 Preisleiter::~Preisleiter()
 {
     delete ui;
 }
 
+
+// makro for refreshing the shown time
+#define Timerrunner(oTimer)\
+    iTimer_##oTimer -= 1;\
+    QTime tCount_##oTimer = time_##oTimer.addSecs(iTimer_##oTimer);\
+    ui->lb_Timer_##oTimer->setText(tCount_##oTimer.toString("hh:mm:ss"));\
+    if(!fünf.compare(tCount_##oTimer.toString("hh:mm:ss")))\
+        ui->lb_Timer_##oTimer->setStyleSheet("color: red");\
+    if(!null.compare(tCount_##oTimer.toString("hh:mm:ss")))\
+        bCountdown_##oTimer = true;
+
+
+// called after 1 second of the timer runned down (declaration see l. 34)
 void Preisleiter::myTimer_TimeOut()
 {
 
     if(bCountdown_1 == false)
     {
-        Preisleiter::Countdown_1();
+        Timerrunner(1);
     }
     else if(bCountdown_2 == false)
     {
-        Preisleiter::Countdown_2();
+        Timerrunner(2);
     }
     else if(bCountdown_3 == false)
     {
-        Preisleiter::Countdown_3();
+        Timerrunner(3);
     }
     else if(bCountdown_4 == false)
     {
-        Preisleiter::Countdown_4();
+        Timerrunner(4);
     }
     else if(bCountdown_5 == false)
     {
-        Preisleiter::Countdown_5();
+        Timerrunner(5);
     }
 
     else
@@ -84,129 +87,57 @@ void Preisleiter::myTimer_TimeOut()
 
 }
 
-void Preisleiter::on_pB_Start_released()
+// called after menu-bar entry 'Start Timer' was pushed
+void Preisleiter::on_startTimer_triggered()
 {
     myTimer->start();
-    ui->pB_Start->hide();
 }
 
-
-
-void Preisleiter::Countdown_1()
-{
-    iTimer_1 -= 1;
-    QTime tCount_1 = time_1.addSecs(iTimer_1);
-    ui->lb_Timer_1->setText(tCount_1.toString("hh:mm:ss"));
-
-    if(!fünf.compare(tCount_1.toString("hh:mm:ss")))
-    {
-        ui->lb_Timer_1->setStyleSheet("color: red");
-    }
-
-    if(!null.compare(tCount_1.toString("hh:mm:ss")))
-    {
-        bCountdown_1 = true;
-        Preisleiter::Countdown_2();
-    }
-}
-
-void Preisleiter::Countdown_2()
-{
-    iTimer_2 -= 1;
-    QTime tCount_2 = time_2.addSecs(iTimer_2);
-    ui->lb_Timer_2->setText(tCount_2.toString("hh:mm:ss"));
-
-    if(!fünf.compare(tCount_2.toString("hh:mm:ss")))
-    {
-        ui->lb_Timer_2->setStyleSheet("color: red");
-    }
-
-    if(!null.compare(tCount_2.toString("hh:mm:ss")))
-    {
-        bCountdown_2 = true;
-        Preisleiter::Countdown_3();
-    }
-}
-
-void Preisleiter::Countdown_3()
-{
-    iTimer_3 -= 1;
-    QTime tCount_3 = time_3.addSecs(iTimer_3);
-    ui->lb_Timer_3->setText(tCount_3.toString("hh:mm:ss"));
-
-    if(!fünf.compare(tCount_3.toString("hh:mm:ss")))
-    {
-        ui->lb_Timer_3->setStyleSheet("color: red");
-    }
-
-    if(!null.compare(tCount_3.toString("hh:mm:ss")))
-    {
-        bCountdown_3 = true;
-    }
-}
-
-void Preisleiter::Countdown_4()
-{
-    iTimer_4 -= 1;
-    QTime tCount_4 = time_4.addSecs(iTimer_4);
-    ui->lb_Timer_4->setText(tCount_4.toString("hh:mm:ss"));
-
-    if(!fünf.compare(tCount_4.toString("hh:mm:ss")))
-    {
-        ui->lb_Timer_4->setStyleSheet("color: red");
-    }
-
-    if(!null.compare(tCount_4.toString("hh:mm:ss")))
-    {
-        bCountdown_4 = true;
-        Preisleiter::Countdown_5();
-    }
-}
-
-void Preisleiter::Countdown_5()
-{
-    iTimer_5 -= 1;
-    QTime tCount_5 = time_5.addSecs(iTimer_5);
-    ui->lb_Timer_5->setText(tCount_5.toString("hh:mm:ss"));
-
-    if(!fünf.compare(tCount_5.toString("hh:mm:ss")))
-    {
-        ui->lb_Timer_5->setStyleSheet("color: red");
-    }
-
-    if(!null.compare(tCount_5.toString("hh:mm:ss")))
-    {
-        bCountdown_5 = true;
-    }
-}
-
-
-
-void Preisleiter::on_actionStart_Countdown_triggered()
-{
-    myTimer->start();
-    ui->pB_Start->hide();
-}
-
-
-
-void Preisleiter::on_actionStop_Countdown_triggered()
+// called after menu-bar entry 'Stop Timer' was pushed
+void Preisleiter::on_stopTimer_triggered()
 {
     myTimer->stop();
 }
 
-void Preisleiter::on_actionAbort_Countdown_triggered()
+
+//Macro for reseting the timer's
+#define ResetTimer(oTimer)\
+    bCountdown_##oTimer = false ;\
+    iTimer_##oTimer = 1;\
+    ui->lb_Timer_##oTimer->setText(time_##oTimer.toString("hh:mm:ss"));
+
+// called after menu-bar entry 'Reset Timer' was pushed
+void Preisleiter::on_resetTimer_triggered()
+{
+    if(myTimer->isActive())
+    {
+        QMessageBox::warning(this,
+                             tr("Preisleiter"),
+                             tr("There is still a timer running."));
+    }
+    else
+    {
+        ResetTimer(1);
+        ResetTimer(2);
+        ResetTimer(3);
+        ResetTimer(4);
+        ResetTimer(5);
+    }
+}
+
+// called after menu-bar entry 'Abort Timer' was pushed
+// if pressed, timer will be stopped and all timer's will be reseted
+void Preisleiter::on_abortTimer_triggered()
 {
     myTimer->stop();
+    ResetTimer(1);
+    ResetTimer(2);
+    ResetTimer(3);
+    ResetTimer(4);
+    ResetTimer(5);
 }
 
-void Preisleiter::on_actionReset_Time_triggered()
+void Preisleiter::on_closeApp_triggered()
 {
-
-}
-
-void Preisleiter::on_actionClose_triggered()
-{
-    ui->centralWidget->close();
-    ui->centralWidget->close();
+    this->close();
 }

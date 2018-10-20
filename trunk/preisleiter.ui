@@ -28,24 +28,6 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pB_Start">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>370</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="lb_Timer_1">
     <property name="geometry">
      <rect>
@@ -190,12 +172,13 @@
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionStart_Countdown"/>
-    <addaction name="actionStop_Countdown"/>
-    <addaction name="actionAbort_Countdown"/>
-    <addaction name="actionReset_Time"/>
+    <addaction name="startTimer"/>
+    <addaction name="stopTimer"/>
+    <addaction name="resetTimer"/>
     <addaction name="separator"/>
-    <addaction name="actionClose"/>
+    <addaction name="abortTimer"/>
+    <addaction name="separator"/>
+    <addaction name="closeApp"/>
    </widget>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
@@ -207,7 +190,7 @@
    <addaction name="menuMenu"/>
    <addaction name="menuSettings"/>
   </widget>
-  <action name="actionClose">
+  <action name="closeApp">
    <property name="text">
     <string>Close Application</string>
    </property>
@@ -225,30 +208,30 @@
     <string>Set Background</string>
    </property>
   </action>
-  <action name="actionStart_Countdown">
+  <action name="startTimer">
    <property name="text">
-    <string>Start Time</string>
+    <string>Start Timer</string>
    </property>
   </action>
-  <action name="actionStop_Countdown">
+  <action name="stopTimer">
    <property name="text">
-    <string>Stop Time</string>
+    <string>Stop Timer</string>
    </property>
    <property name="toolTip">
     <string>Stop Time</string>
    </property>
   </action>
-  <action name="actionAbort_Countdown">
+  <action name="abortTimer">
    <property name="text">
-    <string>Abort Time</string>
+    <string>Abort Timer</string>
    </property>
    <property name="toolTip">
     <string> Abort Time</string>
    </property>
   </action>
-  <action name="actionReset_Time">
+  <action name="resetTimer">
    <property name="text">
-    <string>Reset Time</string>
+    <string>Reset Timer</string>
    </property>
   </action>
  </widget>

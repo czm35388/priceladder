@@ -1,8 +1,8 @@
-#ifndef PREISLEITER_H
-#define PREISLEITER_H
+#pragma once;
 
 #include <QMainWindow>
 #include <QApplication>
+#include <QMessageBox>
 #include <QDesktopWidget>
 #include <QTime>
 #include <QTimer>
@@ -40,12 +40,11 @@ public:
 
 
 private slots:
-    void on_pB_Start_released();
-    void on_actionStart_Countdown_triggered();
-    void on_actionStop_Countdown_triggered();
-    void on_actionAbort_Countdown_triggered();
-    void on_actionReset_Time_triggered();
-    void on_actionClose_triggered();
+    void on_startTimer_triggered();
+    void on_stopTimer_triggered();
+    void on_abortTimer_triggered();
+    void on_resetTimer_triggered();
+    void on_closeApp_triggered();
 
 public slots:
     void myTimer_TimeOut();
@@ -55,10 +54,10 @@ private:
 
     QTimer* myTimer = new QTimer();
 
-    QTime time_1 = QTime(0, 0, 5, 0);
-    QTime time_2 = QTime(0, 0, 5, 0);
-    QTime time_3 = QTime(0, 0, 5, 0);
-    QTime time_4 = QTime(0, 0, 5, 0);
+    QTime time_1 = QTime(0, 0, 1, 0);
+    QTime time_2 = QTime(0, 0, 2, 0);
+    QTime time_3 = QTime(0, 0, 3, 0);
+    QTime time_4 = QTime(0, 0, 4, 0);
     QTime time_5 = QTime(0, 0, 5, 0);
 
     QString null = "00:00:00";
@@ -75,4 +74,3 @@ private:
     int iScreenwidth  = oScreensize.width();
 };
 
-#endif // PREISLEITER_H
