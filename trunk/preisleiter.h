@@ -10,6 +10,7 @@
 #include <QTimer>
 #include <QLabel>
 #include <QFont>
+#include "timersettings.h"
 
 namespace Ui
 {
@@ -37,36 +38,37 @@ public:
     bool bCountdown_4 = false;
     bool bCountdown_5 = false;
 
+    QTime time_1 = QTime(0,  0,  5, 0);
+    QTime time_2 = QTime(0,  0,  5, 0);
+    QTime time_3 = QTime(0,  0,  5, 0);
+    QTime time_4 = QTime(0,  0,  5, 0);
+    QTime time_5 = QTime(0,  0,  5, 0);
+
 private slots:
+    //Menu settings
     void on_startTimer_triggered();
     void on_stopTimer_triggered();
     void on_abortTimer_triggered();
     void on_resetTimer_triggered();
     void on_closeApp_triggered();
 
+    //Timer Settings
+    void on_setTimers_triggered();
+    void on_setBackground_triggered();
+
 public slots:
     void myTimer_TimeOut();
+
+public:
+    void CallGif(int iTimer);
 
 private:
     Ui::Preisleiter *ui;
 
     QTimer* myTimer = new QTimer();
 
-    QTime time_1 = QTime(0, 0, 1, 0);
-    QTime time_2 = QTime(0, 0, 2, 0);
-    QTime time_3 = QTime(0, 0, 3, 0);
-    QTime time_4 = QTime(0, 0, 4, 0);
-    QTime time_5 = QTime(0, 0, 5, 0);
-
-    QString null = "00:00:00";
-    QString fünf = "00:05:00";
-
-    void Countdown_1();
-    void Countdown_2();
-    void Countdown_3();
-    void Countdown_4();
-    void Countdown_5();
-
+    QString null = "0:00:00";
+    QString fuenf = "0:05:00";
 
     QRect oScreensize = QApplication::desktop()->screenGeometry();
     int iScreenheigth = oScreensize.height();
