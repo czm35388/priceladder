@@ -10,6 +10,8 @@
 #include <QTimer>
 #include <QLabel>
 #include <QFont>
+
+
 #include "timersettings.h"
 
 namespace Ui
@@ -58,6 +60,7 @@ private slots:
 
 public slots:
     void myTimer_TimeOut();
+    void abortTimer();
 
 public:
     void CallGif(int iTimer);

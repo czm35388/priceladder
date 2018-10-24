@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QDialog>
+
 #include "preisleiter.h"
 
 namespace Ui
@@ -15,6 +16,13 @@ class TimerSettings : public QDialog
 public:
     explicit TimerSettings(QWidget *parent = nullptr);
     ~TimerSettings();
+
+
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::TimerSettings *ui;

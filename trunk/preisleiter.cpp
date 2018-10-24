@@ -140,6 +140,11 @@ void Preisleiter::on_resetTimer_triggered()
 // if pressed, timer will be stopped and all timer's will be reseted
 void Preisleiter::on_abortTimer_triggered()
 {
+    abortTimer();
+}
+
+void Preisleiter::abortTimer()
+{
     myTimer->stop();
     ResetTimer(1);
     ResetTimer(2);
