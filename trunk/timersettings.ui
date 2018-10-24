@@ -193,7 +193,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pB_SetTimer">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -206,7 +206,7 @@
     <string>Set</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pB_Close">
    <property name="geometry">
     <rect>
      <x>220</x>

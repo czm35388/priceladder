@@ -20,9 +20,11 @@ public:
 
 
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
+
+    void on_pB_SetTimer_clicked();
+
+    void on_pB_Close_clicked();
 
 private:
     Ui::TimerSettings *ui;
