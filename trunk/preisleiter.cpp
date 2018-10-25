@@ -32,6 +32,8 @@ Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
 
+    Rendering();
+
     SetLabel(1, 29);
     SetLabel(2, 44);
     SetLabel(3, 60);
@@ -48,6 +50,34 @@ Preisleiter::~Preisleiter()
     delete ui;
 }
 
+void Preisleiter::Rendering()
+{
+    if(iScreenwidth >= 1870 && iScreenwidth <= 1200)
+    {
+        SetLabel(1, 29);
+        SetLabel(2, 44);
+        SetLabel(3, 60);
+        SetLabel(4, 76);
+        SetLabel(5, 91);
+    }
+    else if (iScreenwidth >= 1200 && iScreenwidth <= 1300)
+    {
+        SetLabel(1, 29);
+        SetLabel(2, 44);
+        SetLabel(3, 60);
+        SetLabel(4, 76);
+        SetLabel(5, 91);
+    }
+
+    else if(iScreenwidth >= 1310 && iScreenwidth <= 1410)
+    {
+        SetLabel(1, 29);
+        SetLabel(2, 44);
+        SetLabel(3, 60);
+        SetLabel(4, 76);
+        SetLabel(5, 91);
+    }
+}
 
 // makro for refreshing the shown time
 #define Timerrunner(oTimer)\

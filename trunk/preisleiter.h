@@ -55,11 +55,7 @@ private slots:
     //Timer Settings
     void on_setTimers_triggered();
     void on_setBackground_triggered();
-
-
-
     void on_pB_SetTimer_clicked();
-
     void on_pB_CloseSettings_clicked();
 
 public slots:
@@ -67,6 +63,7 @@ public slots:
     void abortTimer();
     void fResetTimer();
     void SetTimer();
+    void Rendering();
 
 public:
     void CallGif(int iTimer);
