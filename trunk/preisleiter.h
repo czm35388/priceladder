@@ -10,9 +10,7 @@
 #include <QTimer>
 #include <QLabel>
 #include <QFont>
-
-
-#include "timersettings.h"
+#include <QGroupBox>
 
 namespace Ui
 {
@@ -57,6 +55,12 @@ private slots:
     //Timer Settings
     void on_setTimers_triggered();
     void on_setBackground_triggered();
+
+
+
+    void on_pB_SetTimer_clicked();
+
+    void on_pB_CloseSettings_clicked();
 
 public slots:
     void myTimer_TimeOut();

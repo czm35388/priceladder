@@ -11,6 +11,13 @@ Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
 {
     ui->setupUi(this);
     ui->centralWidget->setWindowTitle("Preisleiter");
+    ui->qW_TimerSettings->setVisible(false);
+
+    ui->qT_SetTime_1->time() = time_1;
+    ui->qT_SetTime_2->time() = time_2;
+    ui->qT_SetTime_3->time() = time_3;
+    ui->qT_SetTime_4->time() = time_4;
+    ui->qT_SetTime_5->time() = time_5;
 
     //@todo set the path via the gui-settings "background"
     QDir dir = QDir::currentPath();
@@ -95,11 +102,12 @@ void Preisleiter::myTimer_TimeOut()
 
 void Preisleiter::SetTimer()
 {
-    SetTimerValue(1);
-    SetTimerValue(2);
-    SetTimerValue(3);
-    SetTimerValue(4);
-    SetTimerValue(5);
+    abortTimer();
+    ui->lb_Timer_1->setText(time_1.toString("h:mm:ss"));
+    ui->lb_Timer_2->setText(time_2.toString("h:mm:ss"));
+    ui->lb_Timer_3->setText(time_3.toString("h:mm:ss"));
+    ui->lb_Timer_4->setText(time_4.toString("h:mm:ss"));
+    ui->lb_Timer_5->setText(time_5.toString("h:mm:ss"));
 }
 
 //*************************************************************************************************
@@ -196,9 +204,8 @@ void Preisleiter::on_setTimers_triggered()
     }
     else
     {
-        TimerSettings oTimerSettings;
-        oTimerSettings.setModal(true);
-        oTimerSettings.exec();
+        ui->qW_TimerSettings->setVisible(true);
+
     }
 }
 
@@ -228,4 +235,20 @@ void Preisleiter::CallGif(int iTimer)
                  break;
         default: break;
     }
+}
+
+void Preisleiter::on_pB_SetTimer_clicked()
+{
+    time_1 = ui->qT_SetTime_1->time();
+    time_2 = ui->qT_SetTime_2->time();
+    time_3 = ui->qT_SetTime_3->time();
+    time_4 = ui->qT_SetTime_4->time();
+    time_5 = ui->qT_SetTime_5->time();
+
+    SetTimer();
+}
+
+void Preisleiter::on_pB_CloseSettings_clicked()
+{
+    ui->qW_TimerSettings->setVisible(false);
 }
