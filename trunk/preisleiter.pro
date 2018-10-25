@@ -13,11 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        preisleiter.cpp \
-    timersettings.cpp
+            preisleiter.cpp \
+            timersettings.cpp
 
 HEADERS  += preisleiter.h \
-    timersettings.h
+            timersettings.h
 
 FORMS    += preisleiter.ui \
-    timersettings.ui
+            timersettings.ui

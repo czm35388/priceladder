@@ -51,8 +51,8 @@ private slots:
     void on_startTimer_triggered();
     void on_stopTimer_triggered();
     void on_abortTimer_triggered();
-    void on_resetTimer_triggered();
     void on_closeApp_triggered();
+    void on_resetTimer_triggered();
 
     //Timer Settings
     void on_setTimers_triggered();
@@ -61,6 +61,8 @@ private slots:
 public slots:
     void myTimer_TimeOut();
     void abortTimer();
+    void fResetTimer();
+    void SetTimer();
 
 public:
     void CallGif(int iTimer);

@@ -90,6 +90,18 @@ void Preisleiter::myTimer_TimeOut()
 
 }
 
+#define SetTimerValue(oTimer)\
+    ui->lb_Timer_##oTimer->setText(time_##oTimer.toString("h:mm:ss"));\
+
+void Preisleiter::SetTimer()
+{
+    SetTimerValue(1);
+    SetTimerValue(2);
+    SetTimerValue(3);
+    SetTimerValue(4);
+    SetTimerValue(5);
+}
+
 //*************************************************************************************************
 //*************************************************************************************************
 //
@@ -128,12 +140,17 @@ void Preisleiter::on_resetTimer_triggered()
     }
     else
     {
-        ResetTimer(1);
-        ResetTimer(2);
-        ResetTimer(3);
-        ResetTimer(4);
-        ResetTimer(5);
+        fResetTimer();
     }
+}
+
+void Preisleiter::fResetTimer()
+{
+    ResetTimer(1);
+    ResetTimer(2);
+    ResetTimer(3);
+    ResetTimer(4);
+    ResetTimer(5);
 }
 
 // called after menu-bar entry 'Abort Timer' was pushed
