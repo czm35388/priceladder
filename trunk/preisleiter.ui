@@ -163,8 +163,8 @@
      <rect>
       <x>50</x>
       <y>290</y>
-      <width>251</width>
-      <height>201</height>
+      <width>301</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -176,11 +176,16 @@
     <widget class="QPushButton" name="pB_CloseSettings">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>160</y>
+       <x>150</x>
+       <y>180</y>
        <width>114</width>
        <height>32</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Close</string>
@@ -191,8 +196,8 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>231</width>
-       <height>24</height>
+       <width>282</width>
+       <height>30</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="Settimer_4">
@@ -200,7 +205,7 @@
        <widget class="QLabel" name="lb_SetTimer_4">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -212,9 +217,7 @@
        <widget class="QTimeEdit" name="qT_SetTime_4">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="layoutDirection">
@@ -232,8 +235,8 @@
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>231</width>
-       <height>24</height>
+       <width>282</width>
+       <height>30</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="Settimer_2">
@@ -241,7 +244,7 @@
        <widget class="QLabel" name="lb_SetTimer_2">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -253,9 +256,7 @@
        <widget class="QTimeEdit" name="qT_SetTime_2">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="layoutDirection">
@@ -273,8 +274,8 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>231</width>
-       <height>24</height>
+       <width>282</width>
+       <height>30</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="Settimer_1">
@@ -282,7 +283,7 @@
        <widget class="QLabel" name="lb_SetTimer_1">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -294,7 +295,7 @@
        <widget class="QTimeEdit" name="qT_SetTime_1">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>12</pointsize>
           <weight>50</weight>
           <bold>false</bold>
          </font>
@@ -312,11 +313,16 @@
     <widget class="QPushButton" name="pB_SetTimer">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>160</y>
+       <x>30</x>
+       <y>180</y>
        <width>114</width>
        <height>32</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Set Timers</string>
@@ -327,8 +333,8 @@
       <rect>
        <x>10</x>
        <y>70</y>
-       <width>231</width>
-       <height>24</height>
+       <width>282</width>
+       <height>30</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="Settimer_3">
@@ -336,7 +342,7 @@
        <widget class="QLabel" name="lb_SetTimer_3">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -348,9 +354,7 @@
        <widget class="QTimeEdit" name="qT_SetTime_3">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="layoutDirection">
@@ -368,8 +372,8 @@
       <rect>
        <x>10</x>
        <y>130</y>
-       <width>231</width>
-       <height>24</height>
+       <width>282</width>
+       <height>30</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="Settimer_5">
@@ -377,7 +381,7 @@
        <widget class="QLabel" name="lb_SetTimer_5">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="text">
@@ -389,9 +393,7 @@
        <widget class="QTimeEdit" name="qT_SetTime_5">
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
+          <pointsize>12</pointsize>
          </font>
         </property>
         <property name="layoutDirection">
@@ -412,7 +414,7 @@
      <x>0</x>
      <y>0</y>
      <width>1980</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">

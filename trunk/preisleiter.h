@@ -38,11 +38,11 @@ public:
     bool bCountdown_4 = false;
     bool bCountdown_5 = false;
 
-    QTime time_1 = QTime(0,  0,  5, 0);
-    QTime time_2 = QTime(0,  0,  5, 0);
-    QTime time_3 = QTime(0,  0,  5, 0);
-    QTime time_4 = QTime(0,  0,  5, 0);
-    QTime time_5 = QTime(0,  0,  5, 0);
+    QTime time_1 = QTime(0,  5,  5, 0);
+    QTime time_2 = QTime(0,  5,  5, 0);
+    QTime time_3 = QTime(0,  5,  5, 0);
+    QTime time_4 = QTime(0,  5,  5, 0);
+    QTime time_5 = QTime(0,  5,  5, 0);
 
 private slots:
     //Menu settings
@@ -75,6 +75,17 @@ private:
 
     QString null = "0:00:00";
     QString fuenf = "0:05:00";
+    QString strStylesheet = "font: ";
+    QString strColor = "";
+
+    bool bRender = false;
+    int iPixelsize = 0;
+    int iLabelPosX = 0;
+    int iLabelPosY_1 = 0;
+    int iLabelPosY_2 = 0;
+    int iLabelPosY_3 = 0;
+    int iLabelPosY_4 = 0;
+    int iLabelPosY_5 = 0;
 
     QRect oScreensize = QApplication::desktop()->screenGeometry();
     int iScreenheigth = oScreensize.height();

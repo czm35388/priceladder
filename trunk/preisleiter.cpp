@@ -1,9 +1,16 @@
 #include "preisleiter.h"
 #include "ui_preisleiter.h"
 
-#define SetLabel(oTimer, iHeight)\
+#define SetLabel(oTimer, iWidth, iHeight, iSize, strColor)\
+    strStylesheet = "";\
+    strStylesheet="font: ";\
+    strStylesheet.append(QString::number(iSize));\
+    strStylesheet.append("pt; color: rgb(");\
+    strStylesheet.append(strColor);\
+    strStylesheet.append(");");\
     ui->lb_Timer_##oTimer->setText(time_##oTimer.toString("h:mm:ss"));\
-    ui->lb_Timer_##oTimer->setGeometry(((iScreenwidth/100)*57), ((iScreenheigth/100)*iHeight), 300, 75);
+    ui->lb_Timer_##oTimer->setGeometry(((iScreenwidth/100)*iWidth), ((iScreenheigth/100)*iHeight), 300, 75);\
+    ui->lb_Timer_##oTimer->setStyleSheet(strStylesheet);
 
 // CTOR
 Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
@@ -13,19 +20,13 @@ Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
     ui->centralWidget->setWindowTitle("Preisleiter");
     ui->qW_TimerSettings->setVisible(false);
 
-    ui->qT_SetTime_1->setTime(time_1);
-    ui->qT_SetTime_2->setTime(time_2);
-    ui->qT_SetTime_3->setTime(time_3);
-    ui->qT_SetTime_4->setTime(time_4);
-    ui->qT_SetTime_5->setTime(time_5);
-
     //@todo set the path via the gui-settings "background"
     QDir dir = QDir::currentPath();
     QString file = "FactoryPreisleiter.jpg";
     QFileInfo fi(dir, file);
     QString path = fi.absoluteFilePath();
 
-    QPixmap bkgnd("/Users/michael/Documents/Programmierung/02_Git_Repos/priceladder/trunk/FactoryPreisleiter.jpg");
+    QPixmap bkgnd(path);
     bkgnd = bkgnd.scaled(iScreenwidth, iScreenheigth, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 
     QPalette palette;
@@ -33,12 +34,6 @@ Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
     this->setPalette(palette);
 
     Rendering();
-
-    SetLabel(1, 29);
-    SetLabel(2, 44);
-    SetLabel(3, 60);
-    SetLabel(4, 76);
-    SetLabel(5, 91);
 
     myTimer->setInterval(1000);
     connect(myTimer, SIGNAL(timeout()), this, SLOT(myTimer_TimeOut()));
@@ -52,30 +47,56 @@ Preisleiter::~Preisleiter()
 
 void Preisleiter::Rendering()
 {
-    if(iScreenwidth >= 1870 && iScreenwidth <= 1200)
+    strColor = "255, 255, 0";
+
+    if(iScreenwidth >= 1870 && iScreenwidth <= 2200)
     {
-        SetLabel(1, 29);
-        SetLabel(2, 44);
-        SetLabel(3, 60);
-        SetLabel(4, 76);
-        SetLabel(5, 91);
+        iPixelsize = 50;
+        iLabelPosX = 58;
+        iLabelPosY_1 = 29;
+        iLabelPosY_2 = 44;
+        iLabelPosY_3 = 60;
+        iLabelPosY_4 = 76;
+        iLabelPosY_5 = 92;
+
+        SetLabel(1, iLabelPosX, iLabelPosY_1, iPixelsize, strColor);
+        SetLabel(2, iLabelPosX, iLabelPosY_2, iPixelsize, strColor);
+        SetLabel(3, iLabelPosX, iLabelPosY_3, iPixelsize, strColor);
+        SetLabel(4, iLabelPosX, iLabelPosY_4, iPixelsize, strColor);
+        SetLabel(5, iLabelPosX, iLabelPosY_5, iPixelsize, strColor);
     }
     else if (iScreenwidth >= 1200 && iScreenwidth <= 1300)
     {
-        SetLabel(1, 29);
-        SetLabel(2, 44);
-        SetLabel(3, 60);
-        SetLabel(4, 76);
-        SetLabel(5, 91);
+        iPixelsize = 40;
+        iLabelPosX = 58;
+        iLabelPosY_1 = 29;
+        iLabelPosY_2 = 44;
+        iLabelPosY_3 = 60;
+        iLabelPosY_4 = 76;
+        iLabelPosY_5 = 92;
+
+        SetLabel(1, iLabelPosX, iLabelPosY_1, iPixelsize, strColor);
+        SetLabel(2, iLabelPosX, iLabelPosY_2, iPixelsize, strColor);
+        SetLabel(3, iLabelPosX, iLabelPosY_3, iPixelsize, strColor);
+        SetLabel(4, iLabelPosX, iLabelPosY_4, iPixelsize, strColor);
+        SetLabel(5, iLabelPosX, iLabelPosY_5, iPixelsize, strColor);
     }
 
     else if(iScreenwidth >= 1310 && iScreenwidth <= 1410)
     {
-        SetLabel(1, 29);
-        SetLabel(2, 44);
-        SetLabel(3, 60);
-        SetLabel(4, 76);
-        SetLabel(5, 91);
+        iPixelsize = 30;
+        iLabelPosX = 58;
+        iLabelPosY_1 = 29;
+        iLabelPosY_2 = 44;
+        iLabelPosY_3 = 60;
+        iLabelPosY_4 = 76;
+        iLabelPosY_5 = 92;
+
+        SetLabel(1, iLabelPosX, iLabelPosY_1, iPixelsize, strColor);
+        SetLabel(2, iLabelPosX, iLabelPosY_2, iPixelsize, strColor);
+        SetLabel(3, iLabelPosX, iLabelPosY_3, iPixelsize, strColor);
+        SetLabel(4, iLabelPosX, iLabelPosY_4, iPixelsize, strColor);
+        SetLabel(5, iLabelPosX, iLabelPosY_5, iPixelsize, strColor);
     }
 }
 
@@ -86,7 +107,8 @@ void Preisleiter::Rendering()
     ui->lb_Timer_##oTimer->setText(tCount_##oTimer.toString("h:mm:ss"));\
     if(!fuenf.compare(tCount_##oTimer.toString("h:mm:ss")))\
     {\
-        ui->lb_Timer_##oTimer->setStyleSheet("color: rgb(255, 0, 0);");\
+        strColor="255, 0, 0";\
+        SetLabel(oTimer, iLabelPosX, iLabelPosY_##oTimer, iPixelsize, strColor);\
     }\
     if(!null.compare(tCount_##oTimer.toString("h:mm:ss")))\
     {\
@@ -180,6 +202,8 @@ void Preisleiter::on_resetTimer_triggered()
     {
         fResetTimer();
     }
+
+    Rendering();
 }
 
 void Preisleiter::fResetTimer()
@@ -206,6 +230,8 @@ void Preisleiter::abortTimer()
     ResetTimer(3);
     ResetTimer(4);
     ResetTimer(5);
+
+    Rendering();
 }
 
 void Preisleiter::on_closeApp_triggered()
@@ -229,13 +255,16 @@ void Preisleiter::on_setTimers_triggered()
     {
         QMessageBox::warning(this,
                              tr("Preisleiter"),
-                             tr("There is still a timer running. \
-                                 You only can set the timers, if you stop the timers"));
+                             tr("There is still a timer running. You only can set the timers, if you stop the timers"));
     }
     else
     {
         ui->qW_TimerSettings->setVisible(true);
-
+        ui->qT_SetTime_1->setTime(time_1);
+        ui->qT_SetTime_2->setTime(time_2);
+        ui->qT_SetTime_3->setTime(time_3);
+        ui->qT_SetTime_4->setTime(time_4);
+        ui->qT_SetTime_5->setTime(time_5);
     }
 }
 
