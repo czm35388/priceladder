@@ -13,11 +13,11 @@ Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
     ui->centralWidget->setWindowTitle("Preisleiter");
     ui->qW_TimerSettings->setVisible(false);
 
-    ui->qT_SetTime_1->time() = time_1;
-    ui->qT_SetTime_2->time() = time_2;
-    ui->qT_SetTime_3->time() = time_3;
-    ui->qT_SetTime_4->time() = time_4;
-    ui->qT_SetTime_5->time() = time_5;
+    ui->qT_SetTime_1->setTime(time_1);
+    ui->qT_SetTime_2->setTime(time_2);
+    ui->qT_SetTime_3->setTime(time_3);
+    ui->qT_SetTime_4->setTime(time_4);
+    ui->qT_SetTime_5->setTime(time_5);
 
     //@todo set the path via the gui-settings "background"
     QDir dir = QDir::currentPath();
@@ -25,7 +25,7 @@ Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
     QFileInfo fi(dir, file);
     QString path = fi.absoluteFilePath();
 
-    QPixmap bkgnd(path);
+    QPixmap bkgnd("/Users/michael/Documents/Programmierung/02_Git_Repos/priceladder/trunk/FactoryPreisleiter.jpg");
     bkgnd = bkgnd.scaled(iScreenwidth, iScreenheigth, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 
     QPalette palette;
