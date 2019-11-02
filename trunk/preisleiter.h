@@ -38,11 +38,11 @@ public:
     bool bCountdown_4 = false;
     bool bCountdown_5 = false;
 
-    QTime time_1 = QTime(0,  5,  5, 0);
-    QTime time_2 = QTime(0,  5,  5, 0);
-    QTime time_3 = QTime(0,  5,  5, 0);
-    QTime time_4 = QTime(0,  5,  5, 0);
-    QTime time_5 = QTime(0,  5,  5, 0);
+    QTime time_1 = QTime(0,  5,  0, 0);
+    QTime time_2 = QTime(0,  5,  0, 0);
+    QTime time_3 = QTime(0,  5,  0, 0);
+    QTime time_4 = QTime(0,  5,  0, 0);
+    QTime time_5 = QTime(0,  5,  0, 0);
 
 private slots:
     //Menu settings
