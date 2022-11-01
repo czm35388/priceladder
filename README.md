@@ -1,5 +1,6 @@
 # Priceladder
 
+## Description
 The "priceladder"-project generates a GUI for parties.
 
 The purpose of the application is to animate the common party people to drink with special drink prices.
@@ -13,3 +14,35 @@ For this purpose it would be the best, if the user of the application could edit
 If you want to join this project, be free and fork or branch it. I will always be thankful for every comment ;)
 
 Much fun and don't trink to much...
+
+## Requirements
+
+| Tool   | Version |
+| -      | -       |
+| Conan  | 1.53.0  |
+| Python | 3.10.8  |
+| Pip    | 22.2.2  |
+
+## Tested compilers
+
+| Arch   | Compiler    | Version  |
+| -      | -           | -        |
+| MacOS  | Apple clang | 12.0.0   |
+
+## How to build the project
+
+```
+conan install conanfile.py -if build
+```
+
+## Bugs and Workarounds
+
+### Conan install failes for MacOS
+The `conan install` command failes for the MAC OS:
+```
+ERROR: Missing prebuilt package for 'libmysqlclient/8.0.29', 'qt/5.15.3'
+```
+You have to build qt on your pc with the conan command
+```
+conan install conanfile.py -if build --build=qt
+```
