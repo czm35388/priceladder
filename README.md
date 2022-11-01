@@ -27,7 +27,7 @@ Much fun and don't trink to much...
 
 | Arch   | Compiler    | Version  |
 | -      | -           | -        |
-| macOS  | Apple clang | 12.0.0   |
+| macOS Catalina (10.15.7)  | Apple clang | 12.0.0   |
 
 ## How to build the project
 
