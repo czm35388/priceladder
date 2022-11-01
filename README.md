@@ -27,7 +27,7 @@ Much fun and don't trink to much...
 
 | Arch   | Compiler    | Version  |
 | -      | -           | -        |
-| MacOS  | Apple clang | 12.0.0   |
+| macOS  | Apple clang | 12.0.0   |
 
 ## How to build the project
 
@@ -37,8 +37,8 @@ conan install conanfile.py -if build
 
 ## Bugs and Workarounds
 
-### Conan install failes for MacOS
-The `conan install` command failes for the MAC OS:
+### Conan install failes for macOS
+The `conan install` command failes for the macOS:
 ```
 ERROR: Missing prebuilt package for 'libmysqlclient/8.0.29', 'qt/5.15.3'
 ```
