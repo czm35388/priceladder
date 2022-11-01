@@ -33,6 +33,9 @@ Much fun and don't trink to much...
 
 ```
 conan install . -if build
+cd build
+cmake ../source -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+cmake --build .
 ```
 
 ## Bugs and Workarounds
