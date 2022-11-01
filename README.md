@@ -25,24 +25,28 @@ Much fun and don't trink to much...
 
 ## Tested compilers
 
-| Arch   | Compiler    | Version  |
-| -      | -           | -        |
+| Arch                      | Compiler    | Version  |
+| -                         | -           | -        |
 | macOS Catalina (10.15.7)  | Apple clang | 12.0.0   |
 
 ## How to build the project
 
 ```
-conan install conanfile.py -if build
+conan install . -if build
 ```
 
 ## Bugs and Workarounds
 
 ### Conan install failes for macOS
-The `conan install` command failes for the macOS:
+The `conan install` command failes for the macOS Catalina (10.15.7):
 ```
 ERROR: Missing prebuilt package for 'libmysqlclient/8.0.29', 'qt/5.15.3'
 ```
-You have to build qt on your pc with the conan command
+You have to build qt once on your pc with the conan command
 ```
-conan install conanfile.py -if build --build=qt
+conan install . -if build -o qt:with_mysql=False --build=qt
+```
+After the install with the `-o qt:with_mysql=False --build=qt` options you're able to install the sources with
+```
+conan install . -if build -o qt:with_mysql=False
 ```
