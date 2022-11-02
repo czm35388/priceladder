@@ -17,12 +17,12 @@ Preisleiter::Preisleiter(QWidget *parent) : QMainWindow(parent),
                                             ui(new Ui::Preisleiter)
 {
     ui->setupUi(this);
-    ui->centralWidget->setWindowTitle("Preisleiter 2019");
+    ui->centralWidget->setWindowTitle("Preisleiter 2022");
     ui->qW_TimerSettings->setVisible(false);
 
     //@todo set the path via the gui-settings "background"
     QDir dir = QDir::currentPath();
-    QString file = "Factory_Preisleiter_Präsentation_19.jpg";
+    QString file = "C:/Users/mc/dev/priceladder/source/Factory_Preisleiter_Präsentation_22.jpg";
     QFileInfo fi(dir, file);
     QString path = fi.absoluteFilePath();
 

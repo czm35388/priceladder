@@ -1,6 +1,8 @@
 #include "preisleiter.h"
 #include <QApplication>
+#include <QWidget>
 #include <QDesktopWidget>
+//#include <QMainWindow>
 
 int main(int argc, char *argv[])
 {
