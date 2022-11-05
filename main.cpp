@@ -1,16 +1,12 @@
-#include "preisleiter.h"
 #include <QApplication>
-#include <QWidget>
-#include <QDesktopWidget>
-//#include <QMainWindow>
+#include "preisleiter.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
-    Preisleiter w;
 
-    // before starting identify the size of the current screen
-    w.setGeometry(a.desktop()->screenGeometry());
+    cPreisleiter w;
+
     w.show();
 
     return a.exec();

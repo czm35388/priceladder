@@ -1,7 +1,7 @@
 from conans import ConanFile
 
-class Priceladder(ConanFile):
-    name = "Priceladder"
+class Preisleiter(ConanFile):
+    name = "Preisleiter"
     version = "0.0.1"
     generators = "cmake"
     url = "https://github.com/czm35388/priceladder"
